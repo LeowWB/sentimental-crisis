@@ -1,9 +1,8 @@
 import React from 'react';
 import anime from './../node_modules/animejs/lib/anime.es.js';
+import Animable from './Animable';
 
 class App extends React.Component {
-
-  ref;
 
   constructor(props) {
     super(props);
@@ -13,26 +12,16 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    let tl = anime.timeline({
-      easing: 'easeOutExpo',
-      duration: 750
-    });
-
-    tl.add({
-      targets: this.ref,
-      translateX: 250
-    });
   }
 
   render() {
     return (
-      <div className="App" ref={(x)=>this.ref=x}>
-        <div className="hello-world">
-          Hello World!
-        </div>
-        <button onClick={(e)=>{this.setState({hi: "hi"});}}>
-          eh
-        </button>
+      <div className="App">
+        <Animable animation={{
+          easing: 'easeOutExpo',
+          duration: 750,
+          translateX: 250
+        }}></Animable>
       </div>
     );
   }
