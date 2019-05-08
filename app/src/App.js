@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import anime from './../node_modules/animejs/lib/anime.es.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  ref;
+
+  constructor(props) {
+    super(props);
+  }
+  
+  componentDidMount() {
+  }
+
+  componentDidUpdate() {
+    let tl = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 750
+    });
+
+    tl.add({
+      targets: this.ref,
+      translateX: 250
+    });
+  }
+
+  render() {
+    return (
+      <div className="App" ref={(x)=>this.ref=x}>
+        <div className="hello-world">
+          Hello World!
+        </div>
+        <button onClick={(e)=>{this.setState({hi: "hi"});}}>
+          eh
+        </button>
+      </div>
+    );
+  }
 }
 
 export default App;
