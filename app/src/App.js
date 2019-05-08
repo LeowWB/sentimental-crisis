@@ -1,5 +1,4 @@
 import React from 'react';
-import anime from './../node_modules/animejs/lib/anime.es.js';
 import Animable from './Animable';
 
 class App extends React.Component {
