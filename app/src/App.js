@@ -9,13 +9,13 @@ class App extends React.Component {
 
     let defaultState = {entries: []}
     this.store = createStore(this.mainReducer, defaultState);
+    this.unsub = this.store.subscribe(() => {alert('new thingything upd8ed');});
 
     this.entriesOnClick = this.entriesOnClick.bind(this);
     this.showEntries = this.showEntries.bind(this);
   }
   
   componentDidMount() {
-    this.store.subscribe(() => {alert('new thingything upd8ed');});
   }
 
   componentDidUpdate() {
@@ -37,6 +37,7 @@ class App extends React.Component {
           <button onClick={this.entriesOnClick}>lai</button>
           <br/>
           <button onClick={this.showEntries}>show existing entries</button>
+          <button onClick={this.unsub}>stop showing sodding popups every time i click lai</button>
         </div>
       </div>
     );
