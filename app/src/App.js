@@ -16,13 +16,24 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Animable animation={{
-          easing: 'easeOutExpo',
-          duration: 750,
-          translateX: 250
-        }}></Animable>
+        <div>
+          <Animable animation={{
+            easing: 'easeOutExpo',
+            duration: 750,
+            translateX: 250
+          }}></Animable>
+        </div>
+        <br/>
+        <div>
+          <input type="textfield" ref={x=>this.entries_tf=x}></input>
+          <button onClick={this.entriesOnClick}>lai</button>
+        </div>
       </div>
     );
+  }
+
+  entriesOnClick(event) {
+    alert()
   }
 }
 
