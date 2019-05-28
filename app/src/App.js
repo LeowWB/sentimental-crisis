@@ -15,6 +15,7 @@ class App extends React.Component {
   }
   
   componentDidMount() {
+    this.store.subscribe(() => {alert('new thingything upd8ed');});
   }
 
   componentDidUpdate() {
