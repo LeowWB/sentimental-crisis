@@ -16,6 +16,7 @@ class Animable extends React.Component {
 
   animate() {
     // note: must set targets first before animation else doesn't work
+    // note: field is called targets, not target.
     let tl = anime.timeline({targets: this.ref});
     tl.add(this.animation);
   }
