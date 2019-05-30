@@ -64,10 +64,10 @@ class App extends React.Component {
         
         <div>
           <input type="textfield" ref={x=>this.entries_tf=x}></input>
-          <button onClick={this.entriesOnClick}>lai</button>
+          <button onClick={this.entriesOnClick}>add entry</button>
           <br/>
           <button onClick={this.showEntries}>show existing entries</button>
-          <button onClick={this.unsub}>stop showing sodding popups every time i click lai</button>
+          <button onClick={this.unsub}>stop showing sodding popups every time i add entry</button>
         </div>
       </div>
     );
